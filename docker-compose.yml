@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    # bert_model/ must exist inside backend/ before building the image
+    # (see backend/Dockerfile and the README).
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - SENTIMENT_API_URL=http://backend:8000
+    depends_on:
+      - backend

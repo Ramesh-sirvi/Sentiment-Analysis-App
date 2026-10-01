@@ -1,0 +1,7 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+torch>=2.1
+transformers>=4.38
+nltk>=3.8
+emoji>=2.10
+pydantic>=2.6
